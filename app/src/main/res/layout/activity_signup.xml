@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logbacknew"
+    tools:context=".Signup">
+
+<!--transparent-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/semi_black" />
+
+    <RelativeLayout
+        android:id="@+id/centerline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_above="@id/centerline"
+        android:layout_marginBottom="150dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New User"
+            android:textColor="@color/cMain"
+            android:textSize="45sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join with us Today!"
+            android:textColor="#9CCDE4"
+            android:textSize="23sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/centerline"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:textColorHint="@color/cMain"
+        app:hintTextColor="@color/cMain"
+        app:boxStrokeColor="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/logemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorLink="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/centerline"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:textColorHint="@color/cMain"
+        app:hintTextColor="@color/cMain"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/cMain">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/logPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/conpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:textColorHint="@color/cMain"
+        app:hintTextColor="@color/cMain"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/cMain">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/conlogPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Your Password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RelativeLayout
+        android:id="@+id/signUP"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/conpassword"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/t_btn"
+        android:onClick="signuptapped">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:text="Sign Up"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/backToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signUP"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:onClick="backToLoginTapped"
+        android:shadowColor="#000000"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="2"
+        android:text="Back to Login"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+</RelativeLayout>
