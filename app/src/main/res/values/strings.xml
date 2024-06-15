@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Note App</string>
+
+    <string name="cart_icon_description">Description of the cart icon</string>
+    <string name="cart">Cart</string>
+
+    <string name="search">Search</string>
+
+
 </resources>

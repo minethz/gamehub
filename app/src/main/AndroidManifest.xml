@@ -48,6 +48,9 @@
             android:name=".Shop"
             android:exported="false" />
 
+        <activity android:name=".CartActivity" />
+
+
 
 
     </application>
