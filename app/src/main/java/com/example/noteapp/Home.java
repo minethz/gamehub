@@ -7,7 +7,6 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,11 +14,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Calendar;
 import java.util.Locale;
 
-
 public class Home extends AppCompatActivity {
     TextView timeTextView;
     private FirebaseAuth firebaseAuth;
     private Handler handler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,19 +26,12 @@ public class Home extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         timeTextView = findViewById(R.id.Time);
-        Button shopNowButton = findViewById(R.id.shopnow);
         handler.post(updateTimeRunnable);
+    }
 
-        shopNowButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Shop.class);
-                startActivity(intent);
-            }
-        });
-
-
-
+    public void tappedShopNow(View view) {
+        Intent intent = new Intent(Home.this, Shop.class);
+        startActivity(intent);
     }
 
     public void tappedquote(View view) {
@@ -56,15 +48,17 @@ public class Home extends AppCompatActivity {
         @Override
         public void run() {
             updateTime();
-            handler.postDelayed(this, 3000); //  3s
+            handler.postDelayed(this, 3000); // 3 seconds
         }
     };
+
     private void updateTime() {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm a", Locale.getDefault());
         String currentTime = dateFormat.format(calendar.getTime());
         timeTextView.setText(currentTime);
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -73,10 +67,7 @@ public class Home extends AppCompatActivity {
 
     public void tappedLogout(View view) {
         firebaseAuth.signOut();
-
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
     }
 }
